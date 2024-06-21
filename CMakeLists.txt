@@ -31,8 +31,8 @@ add_executable(firmware
 # Add pico_stdlib library which aggregates commonly used features
 
 # create map/bin/hex/uf2 file in addition to ELF.
-pico_enable_stdio_usb(firmware 1)
-pico_enable_stdio_uart(firmware 0)
+#pico_enable_stdio_usb(firmware 1)
+#pico_enable_stdio_uart(firmware 0)
 pico_add_extra_outputs(firmware)
 
 

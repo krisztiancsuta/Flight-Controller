@@ -404,7 +404,7 @@ int main()
         if (battery_voltage < 1000 && battery_voltage > 600)
             cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1); // turn on warning led if battery voltage is low
 
-        throttle = 1000;
+        throttle = 1400;
         // ESC Speed calculation
         esc_1 = throttle - pid_output_pitch + pid_output_roll - pid_output_yaw; // Calculate the pulse for esc 1 (front-right - CCW)
         esc_2 = throttle + pid_output_pitch + pid_output_roll + pid_output_yaw; // Calculate the pulse for esc 2 (rear-right - CW)
@@ -419,6 +419,7 @@ int main()
         set_speed(esc_1, esc_2, esc_3, esc_4);
 
         printf("ra:%3f pa:%3f\n", angle_roll_acc, angle_pitch_acc);
+        printf("1| %d  2| %d   3| %d   4| %d  \n", esc_1, esc_2, esc_3, esc_4);
     }
 
     return 0;
